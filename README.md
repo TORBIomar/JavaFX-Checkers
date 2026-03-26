@@ -1,127 +1,45 @@
-# Jeu de Dames - French/Moroccan Checkers
+# JavaFX Checkers
 
-A beautiful, fully-featured checkers game implementing French/Moroccan rules with a modern JavaFX interface.
-
-![Java](https://img.shields.io/badge/Java-17+-orange)
-![JavaFX](https://img.shields.io/badge/JavaFX-20-blue)
-![Gradle](https://img.shields.io/badge/Gradle-8.5-green)
-
-## Features
-
-- ✅ **Full French/Moroccan Rules Implementation**
-  - Mandatory captures (must capture if possible)
-  - Multiple captures in one turn (capture chains)
-  - Forward-only movement for regular pieces
-  - Kings can move and capture in any direction
-  - Automatic promotion to king when reaching opposite end
-
-- 🎨 **Modern UI**
-  - Beautiful dark theme with gradient backgrounds
-  - Smooth piece animations
-  - Visual move indicators (green for moves, red for captures)
-  - Highlighted possible moves when selecting a piece
-  - Responsive design - window is fully resizable
-
-- 🎮 **Game Features**
-  - Turn-based gameplay
-  - Visual feedback for selected pieces
-  - Game over detection
- 
+French/Moroccan-style checkers game built with JavaFX.
 
 ## Requirements
 
-- Java 17 or higher
+- Java 17+
 - Gradle (or use the included wrapper)
 
-## How to Run
-
-### Using Gradle Wrapper (Recommended)
+## Run
 
 ```bash
-# On Windows
+# Windows
 .\gradlew.bat run
 
-# On Linux/Mac
+# Linux/macOS
 ./gradlew run
 ```
 
-### Using Gradle Directly
-
-```bash
-gradle run
-```
-
-### Build JAR
+## Build
 
 ```bash
 gradle build
-java -jar build/libs/dames.jar
 ```
 
-### Using IDE
+## Rules Implemented
 
-1. Open the project in IntelliJ IDEA, Eclipse, or VS Code
-2. Import as a Gradle project
-3. Run the `Main` class
+- Mandatory captures
+- Multi-capture chains
+- Forward movement for regular pieces
+- King movement and captures in all diagonal directions
+- Automatic promotion on last rank
 
-## Game Rules
+## Project Layout
 
-### Basic Movement
-- **Regular Pieces**: Can only move forward diagonally (white moves up, black moves down)
-- **Kings**: Can move any number of squares diagonally in any direction
-- Pieces can only move to empty squares
-
-### Captures
-- **Mandatory**: If a capture is possible, you must take it
-- **Multiple Captures**: Continue capturing in the same turn if possible
-- **Regular Pieces**: Can only capture forward
-- **Kings**: Can capture in any direction and land anywhere after the captured piece
-
-### Promotion
-- Pieces become kings when reaching the opposite end of the board
-- White pieces promote on row 0
-- Black pieces promote on row 7
-
-## Controls
-
-- **Click** on a piece to select it
-- **Green circles** indicate possible regular moves
-- **Red/orange circles** indicate possible captures
-- **Click** on a highlighted square to move
-- Continue clicking to chain multiple captures
-
-## Project Structure
-
-```
+```text
 src/main/java/com/example/dames/
-├── Main.java                    # Application entry point
-├── controller/
-│   └── BoardController.java     # Game logic and UI controller
-└── model/
-    ├── Piece.java               # Piece representation
-    ├── PieceType.java           # Piece type enum (MAN, KING)
-    ├── Tile.java                # Board tile representation
-    └── Move.java                # Move representation
+  Main.java
+  controller/BoardController.java
+  model/{Piece,PieceType,Tile,Move}.java
 
 src/main/resources/com/example/dames/
-├── board.fxml                   # UI layout
-└── styles.css                   # Styling
+  board.fxml
+  styles.css
 ```
-
-## Technologies
-
-- **JavaFX 20** - Modern UI framework
-- **Gradle** - Build automation
-- **Java 17** - Programming language
-
-## License
-
-This project is open source and available for educational purposes.
-
-## Contributing
-
-Feel free to fork this project and submit pull requests for any improvements!
-
----
-
-Enjoy playing! 🎮
