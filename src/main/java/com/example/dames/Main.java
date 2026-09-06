@@ -13,8 +13,9 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/dames/board.fxml"));
         Parent root = loader.load();
         // Set minimum size for the window
-        int minSize = 8 * 60; // Minimum tile size of 60px
-        Scene scene = new Scene(root, minSize, minSize);
+        int initialWidth = 640;
+        int initialHeight = 720;
+        Scene scene = new Scene(root, initialWidth, initialHeight);
         scene.getStylesheets().add(getClass().getResource("/com/example/dames/styles.css").toExternalForm());
         primaryStage.setTitle("Jeu de Dames - Regles Francaises/Marocaines");
         
@@ -28,8 +29,8 @@ public class Main extends Application {
         }
         
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(minSize);
-        primaryStage.setMinHeight(minSize);
+        primaryStage.setMinWidth(520);
+        primaryStage.setMinHeight(600);
         primaryStage.setResizable(true); // Allow resizing
         primaryStage.show();
     }

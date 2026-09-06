@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 
-<AnchorPane xmlns:fx='http://javafx.com/fxml/1' fx:controller='com.example.dames.controller.BoardController' styleClass="root-pane">
-    <children>
-        <GridPane fx:id='grid' styleClass="board-grid" 
-                  AnchorPane.topAnchor="0" 
-                  AnchorPane.leftAnchor="0" 
-                  AnchorPane.rightAnchor="0" 
-                  AnchorPane.bottomAnchor="0" />
-    </children>
-</AnchorPane>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dames.controller.BoardController" styleClass="app-container" alignment="TOP_CENTER" spacing="12">
+    <!-- Modern Header Bar -->
+    <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="16">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="♟" styleClass="header-icon"/>
+            <Label text="Jeu de Dames" styleClass="header-title"/>
+        </HBox>
+        
+        <StackPane HBox.hgrow="ALWAYS" alignment="CENTER">
+            <Label fx:id="statusLabel" text="Tour des Blancs" styleClass="turn-badge"/>
+        </StackPane>
+        
+        <Button text="Nouvelle Partie" onAction="#resetGame" styleClass="action-btn"/>
+    </HBox>
+
+    <!-- Centered Board Container -->
+    <StackPane VBox.vgrow="ALWAYS" alignment="CENTER" styleClass="board-wrapper">
+        <GridPane fx:id="grid" styleClass="board-grid" alignment="CENTER"/>
+    </StackPane>
+</VBox>
